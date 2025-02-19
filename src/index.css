@@ -1,13 +1,90 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3699ff;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Logo Styling */
+.logo {
+  height: 50px;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Nav Links Styling */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-links a.active {
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: #3699ff;
+}
+
+.nav-links a:hover {
+  background-color: #ffffff;
+  color: #3699ff;
+  border-radius: 5px;
+}
+
+/* Mobile Styles (Hide Links By Default) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show the menu icon */
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #3699ff;
+    width: 200px;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .nav-links.open {
+    display: flex; /* Show links when menu is open */
+  }
+
+  .nav-links a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+  }
 }
